@@ -37,16 +37,6 @@ build_script:
     - setuptools-patch.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
     
-#
-#test_script:
-#  # Build the compiled extension and run the project tests
-#  - "%CMD_IN_ENV% tox -e %TOX_ENV_BASE%-with-extensions,%TOX_ENV_BASE%-without-extensions"
-#
-#after_build:
-#  # If tests are successful, create a whl package for the project.
-#  - "%CMD_IN_ENV% python setup.py bdist_wheel"
-#  - ps: "ls dist"
-
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
   - path: project\dist\*
