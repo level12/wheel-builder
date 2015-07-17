@@ -34,7 +34,7 @@ build_script:
     - git clone --depth=25 https://github.com/GrahamDumpleton/wrapt.git project
     - cd project
     - git checkout 1.10.5
-    - fart -c setup.py "from distutils.core import setup" "from setuptools import setup" && exit 0
+    - setuptools-patch.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
     
 #
