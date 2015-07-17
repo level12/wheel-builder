@@ -38,6 +38,7 @@ build_script:
     - git clone --depth=%GIT_DEPTH% %GIT_URL% project
     - cd project
     - git checkout %GIT_REF%
+    - remove-dev-tag.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
 
 artifacts:
