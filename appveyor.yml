@@ -22,7 +22,7 @@ install:
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
-  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%APPVEYOR_BUILD_FOLDER%;%PATH%"
 
   # Check that we have the expected version and architecture for Python
   - "python --version"
@@ -34,8 +34,8 @@ build_script:
     - git clone https://github.com/GrahamDumpleton/wrapt.git project
     - cd project
     - git checkout 1.10.5
-    - "%CMD_IN_ENV% python setup.py bdist_egg"
-    - wheel convert dist\*.egg -d dist
+    - fart --help
+    - "%CMD_IN_ENV% python setup.py bdist_wheel"
     
 #
 #test_script:
