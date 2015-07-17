@@ -32,6 +32,27 @@ Then:
 2. Choose the artifacts tab.
 3. Profit!
 
+Project Maintainers
+-------------------
+
+We are committed to turning around builds for new releases as soon as possible.  In order to make
+that happen, please:
+
+* Have us create a branch for your project.  You'll only need to do this once.
+* Fork this repo, update the `appveyor.yml` file with the tag/commit of your new release and send a
+  PR against your project's branch.
+* We'll do our best to accept these PRs ASAP so the wheels can be ready to ship to PyPI with
+  the rest of your files.
+
+However, for the best results, we recommend you setup your project to test and build on
+appveyor yourself.  Appveyor has free plans for OSS and here are a couple example projects to take
+a look at:
+
+* https://github.com/ogrisel/python-appveyor-demo
+* https://github.com/level12/sqlalchemy-appveyor/tree/appveyor
+    * In particular, we put a lot of effort into getting the SQL Server configuration running well
+    for testing purposes.
+
 Issues
 ------
 
