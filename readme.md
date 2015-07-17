@@ -45,7 +45,7 @@ that happen, please:
   the rest of your files.
 
 However, for the best results, we recommend you setup your project to test and build on
-appveyor yourself.  Appveyor has free plans for OSS and here are a couple example projects to take
+appveyor yourself.  Appveyor has a free plan for OSS and here are a couple example projects to take
 a look at:
 
 * https://github.com/ogrisel/python-appveyor-demo
