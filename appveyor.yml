@@ -31,10 +31,10 @@ install:
   - "%CMD_IN_ENV% pip install wheel"
 
 build_script:
-    - git clone https://github.com/GrahamDumpleton/wrapt.git project
+    - git clone --depth=25 https://github.com/GrahamDumpleton/wrapt.git project
     - cd project
     - git checkout 1.10.5
-    - fart --help
+    - fart -c setup.py "from distutils.core import setup" "from setuptools import setup"
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
     
 #
