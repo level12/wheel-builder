@@ -13,10 +13,10 @@ environment:
       PYTHON_ARCH: "32"
       TOX_ENV_BASE: py27
 
-    #- PYTHON: "C:\\Python34"
-    #  PYTHON_VERSION: "3.4.3"
-    #  PYTHON_ARCH: "32"
-    #  TOX_ENV_BASE: py34
+    - PYTHON: "C:\\Python34"
+      PYTHON_VERSION: "3.4.3"
+      PYTHON_ARCH: "32"
+      TOX_ENV_BASE: py34
 
 install:
   # Prepend newly installed Python to the PATH of this build (this cannot be
