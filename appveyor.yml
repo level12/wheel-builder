@@ -32,6 +32,10 @@ install:
 
 build_script:
     - git clone https://github.com/GrahamDumpleton/wrapt.git project
+    - cd project
+    - git checkout 1.10.5
+    - "%CMD_IN_ENV% python setup.py bdist_wheel"
+    
 #
 #test_script:
 #  # Build the compiled extension and run the project tests
@@ -41,7 +45,7 @@ build_script:
 #  # If tests are successful, create a whl package for the project.
 #  - "%CMD_IN_ENV% python setup.py bdist_wheel"
 #  - ps: "ls dist"
-#
-#artifacts:
-#  # Archive the generated wheel package in the ci.appveyor.com build report.
-#  - path: dist\*
+
+artifacts:
+  # Archive the generated wheel package in the ci.appveyor.com build report.
+  - path: project\dist\*
