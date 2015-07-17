@@ -5,8 +5,11 @@ environment:
     # See: http://stackoverflow.com/a/13751649/163740
     CMD_IN_ENV: "cmd /E:ON /V:ON /C %APPVEYOR_BUILD_FOLDER%\\appveyor\\run_with_env.cmd"
 
-  GIT_URL:
-  GIT_REF:
+  GIT_URL: https://github.com/zzzeek/sqlalchemy.git
+  GIT_REF: rel_1_0_6
+  # This needs to get bigger depending on how many commits there are between the release you need
+  # and now.
+  GIT_DEPTH: 100
 
   matrix:
     # Pre-installed Python versions, which Appveyor may upgrade to
@@ -32,11 +35,10 @@ install:
   - "%CMD_IN_ENV% pip install wheel"
 
 build_script:
-    #- git clone --depth=25 %GIT_URL% project
-    #- cd project
-    #- git checkout %GIT_REF%
-    #- "%CMD_IN_ENV% python setup.py bdist_wheel"
-    - echo "see other branches for builds"
+    - git clone --depth=%GIT_DEPTH% %GIT_URL% project
+    - cd project
+    - git checkout %GIT_REF%
+    - "%CMD_IN_ENV% python setup.py bdist_wheel"
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
