@@ -32,7 +32,7 @@ install:
   - "%CMD_IN_ENV% pip install wheel"
 
 build_script:
-    #- git clone --depth=25 %GIT_URL% project
+    #- git clone --depth=1 --branch %GIT_REF% %GIT_URL% project
     #- cd project
     #- git checkout %GIT_REF%
     #- "%CMD_IN_ENV% python setup.py bdist_wheel"

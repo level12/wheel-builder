@@ -25,6 +25,7 @@ Start by hitting the build history for the project:
 
 * [SQLAlchemy](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=sqlalchemy)
 * [wrapt](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=wrapt)
+* [simplejson](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=simplejson)
 
 Then:
 
