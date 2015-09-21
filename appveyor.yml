@@ -6,7 +6,7 @@ environment:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C %APPVEYOR_BUILD_FOLDER%\\appveyor\\run_with_env.cmd"
 
   GIT_URL: https://github.com/zzzeek/sqlalchemy.git
-  GIT_REF: rel_1_0_6
+  GIT_REF: rel_1_0_8
   # This needs to get bigger depending on how many commits there are between the release you need
   # and now.
   GIT_DEPTH: 100
@@ -35,7 +35,7 @@ install:
   - "%CMD_IN_ENV% pip install wheel"
 
 build_script:
-    - git clone --depth=%GIT_DEPTH% %GIT_URL% project
+    - git clone --depth=1 --branch %GIT_REF% %GIT_URL% project
     - cd project
     - git checkout %GIT_REF%
     - remove-dev-tag.bat
