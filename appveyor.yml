@@ -49,7 +49,7 @@ deploy:
     bucket: level12-wheels
     set_public: true
     folder: sqlalchemy
-    artifact: project\dist\*
+    artifact: project\dist\SQLAlchemy-1.0.8-cp27-none-win32.whl
     on:
       branch: sqlalchemy
 
