@@ -1,12 +1,14 @@
 env:
   - PROJECT_URL=https://github.com/zzzeek/sqlalchemy.git PROJECT_REF=rel_1_0_8
 before_install:
-  - brew install pip
-  - brew install virtualenv
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew install pip
+      brew install virtualenv
+    fi
+
 os:
   - linux
   - osx
-language: python
 python:
 - '2.7'
 - '3.4'
