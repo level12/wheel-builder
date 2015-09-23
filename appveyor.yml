@@ -50,6 +50,8 @@ deploy:
     set_public: true
     folder: sqlalchemy
     artifact: project\dist\*
+    on:
+      branch: sqlalchemy
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
