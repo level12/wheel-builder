@@ -6,7 +6,7 @@ before_install:
 os:
   - linux
   - osx
-language: python
+language: objective-c
 python:
 - '2.7'
 - '3.4'
