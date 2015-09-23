@@ -2,7 +2,7 @@ env:
   - PROJECT_URL=https://github.com/zzzeek/sqlalchemy.git PROJECT_REF=rel_1_0_8
 before_install:
   - chmod 0777 ./travis/install_mac_dependencies.sh
-  - ./install_mac_dependencies.sh
+  - ./travis/install_mac_dependencies.sh
 os:
   - linux
   - osx
