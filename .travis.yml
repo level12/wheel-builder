@@ -1,5 +1,8 @@
 env:
   - PROJECT_URL=https://github.com/zzzeek/sqlalchemy.git PROJECT_REF=rel_1_0_8
+os:
+  - linux
+  - osx
 language: python
 python:
 - '2.7'
