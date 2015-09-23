@@ -6,7 +6,7 @@ python:
 - '3.4'
 - '3.5'
 before_script:
-  - pip install --U pip
+  - pip install -U pip
   - pip install wheel
   - chmod 0777 ./travis/get_project.sh
   - ./travis/get_project.sh
