@@ -40,6 +40,7 @@ build_script:
     - git checkout %GIT_REF%
     - remove-dev-tag.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
+    - move project\dist\* %cd%
 
 deploy:
   provider: S3
@@ -49,8 +50,4 @@ deploy:
   bucket: level12-wheels
   set_public: true
   folder: sqlalchemy
-  artifact: project\dist\SQLAlchemy-1.0.8-cp34-none-win32.whl, project\dist\SQLAlchemy-1.0.8-cp27-none-win32.whl
-
-artifacts:
-  # Archive the generated wheel package in the ci.appveyor.com build report.
-  - path: project\dist\*
+  artifact: SQLAlchemy-1.0.8-cp34-none-win32.whl, SQLAlchemy-1.0.8-cp27-none-win32.whl
