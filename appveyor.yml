@@ -40,7 +40,7 @@ build_script:
     - git checkout %GIT_REF%
     - remove-dev-tag.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
-    - move project\dist\* %cd%
+    - move dist\* ..
 
 deploy:
   provider: S3
