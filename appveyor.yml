@@ -44,7 +44,7 @@ deploy:
   provider: S3
   access_key_id: AKIAITHBLDMKF6TGCADA
   secret_access_key:
-    secure: K1i5s/MHOoTBS2tzpwigQHg5wSRAmmeJIWmL+bxgrTfr9hIdZRt//lJkkT5FN9dz
+    secure: QUAghDXmpd9SIlTudNhT5aQMe80h4cpp+Povu6TvewA8V0LHczdWsbTJaZj2bMZj
   bucket: level12-wheels
   set_public: true
   folder: libsass
