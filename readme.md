@@ -1,38 +1,31 @@
 Building Python Wheels for Windows
 ==================================
 
-At [Level 12][level12] we often have the need for Windows wheels for projects that don't publish them.  This
+At [Level 12][level12] we often have the need for wheels for projects that don't publish them.  This
 is due to
 
 1. Our practice of shipping [wheelhouses][wheelhouse] with our projects to ensure testing and
 deployment consistency.
-2. The need for some of our apps to run on Windows.
-3. A preference of some of our devs to not have to run Windows on their dev machines.
+2. The need for some of our apps to run on various OS's.
+3. A preference of some of our devs to not have to run all the major OS's on their dev machines.
 
-So, since we needed to build Windows wheels for ourselves, we figured we'd make them available to
+So, since we needed to build wheels for ourselves, we figured we'd make them available to
 others as well.
 
 Security
 --------
 
 Can you trust the wheels we publish?  The entire build process is here in the open on GitHub and
-the wheels are being built in a [public project on Appveyor][av project].
+the wheels are being built in a [public project on Appveyor][av project] and
+travis.
 
 Where do I find the Wheels?
 ---------------------------
 
 Start by hitting the build history for the project:
 
-* [SQLAlchemy](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=sqlalchemy)
-* [wrapt](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=wrapt)
-* [simplejson](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=simplejson)
-* [tornado](https://ci.appveyor.com/project/rsyring/wheel-builder/history?branch=tornado)
+You can find all the wheels on S3 here: https://s3.amazonaws.com/level12-wheels/index.html
 
-Then:
-
-1. Choose the environment that matches the Python version you need the wheel for.
-2. Choose the artifacts tab.
-3. Profit!
 
 Project Maintainers
 -------------------
@@ -41,7 +34,7 @@ We are committed to turning around builds for new releases as soon as possible. 
 that happen, please:
 
 * Have us create a branch for your project.  You'll only need to do this once.
-* Fork this repo, update the `appveyor.yml` file with the tag/commit of your new release and send a
+* Fork this repo, update the `appveyor.yml` and `travis.yml` file with the tag/commit of your new release and send a
   PR against your project's branch.
 * We'll do our best to accept these PRs ASAP so the wheels can be ready to ship to PyPI with
   the rest of your files.
