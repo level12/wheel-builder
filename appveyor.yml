@@ -46,4 +46,4 @@ deploy:
 
 artifacts:
   - path: cffi-1.2.0-cp34-none-win32.whl
-  - paht: cffi-1.2.0-cp27-none-win32.whl
+  - path: cffi-1.2.0-cp27-none-win32.whl
