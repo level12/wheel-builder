@@ -28,9 +28,8 @@ install:
   - "%CMD_IN_ENV% pip install wheel"
 
 build_script:
-    - hg clone -u https://bitbucket.org/cffi/cffi
+    - hg clone https://bitbucket.org/cffi/cffi -u release-1.2
     - cd cffi
-    - hg checkout -C release-1.2
     - "%cmd_in_env% python setup.py bdist_wheel"
     - cd ..
     - move cffi\dist\* .
