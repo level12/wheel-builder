@@ -41,6 +41,10 @@ build_script:
     - remove-dev-tag.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
 
+deploy:
+  provider: Environment
+  name: level12-wheels
+
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
   - path: project\dist\*
