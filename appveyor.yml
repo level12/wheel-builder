@@ -43,6 +43,16 @@ build_script:
     - cd ..
     - move project\dist\* .
 
+deploy:
+  provider: S3
+  access_key_id: AKIAITHBLDMKF6TGCADA
+  secret_access_key:
+    secure: QUAghDXmpd9SIlTudNhT5aQMe80h4cpp+Povu6TvewA8V0LHczdWsbTJaZj2bMZj
+  bucket: level12-wheels
+  set_public: true
+  folder: sqlalchemy
+  artifact: SQLAlchemy-1.0.8-cp34-none-win32.whl, SQLAlchemy-1.0.8-cp27-none-win32.whl
+
 artifacts:
   - path: SQLAlchemy-1.0.8-cp34-none-win32.whl
   - path: SQLAlchemy-1.0.8-cp27-none-win32.whl
