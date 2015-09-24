@@ -42,8 +42,8 @@ deploy:
   bucket: level12-wheels
   set_public: true
   folder: cffi
-  artifact: cffi-1.2.0-cp34-none-win32.whl, cffi-1.2.0-cp27-none-win32.whl
+  artifact: cffi-1.2.1-cp34-none-win32.whl, cffi-1.2.1-cp27-none-win32.whl
 
 artifacts:
-  - path: cffi-1.2.0-cp34-none-win32.whl
-  - path: cffi-1.2.0-cp27-none-win32.whl
+  - path: cffi-1.2.1-cp34-none-win32.whl
+  - path: cffi-1.2.1-cp27-none-win32.whl
