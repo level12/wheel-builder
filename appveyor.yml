@@ -44,6 +44,7 @@ build_script:
 deploy:
   provider: Environment
   name: level12-wheels
+  folder: sqlalchemy
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
