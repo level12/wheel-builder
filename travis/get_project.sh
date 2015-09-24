@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-hg clone -u https://bitbucket.org/cffi/cffi -u release-1.2
+hg clone -u release-1.2 https://bitbucket.org/cffi/cffi
 cd cffi
 python setup.py bdist_wheel
