@@ -1,5 +1,5 @@
 env:
-  - PROJECT_URL=https://github.com/pyca/bcrypt.git PROJECT_REF=v2.0.0
+  - PROJECT_URL=https://github.com/pyca/bcrypt.git PROJECT_REF=2.0.0
 os:
   - linux
 language: python

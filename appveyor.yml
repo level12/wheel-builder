@@ -6,7 +6,7 @@ environment:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C %APPVEYOR_BUILD_FOLDER%\\appveyor\\run_with_env.cmd"
 
   GIT_URL: https://github.com/pyca/bcrypt.git
-  GIT_REF: v2.0.0
+  GIT_REF: 2.0.0
 
   matrix:
     # Pre-installed Python versions, which Appveyor may upgrade to
