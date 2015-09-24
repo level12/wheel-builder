@@ -41,18 +41,6 @@ build_script:
     - remove-dev-tag.bat
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
 
-deploy:
-  - provider: S3
-    access_key_id: AKIAITHBLDMKF5TGCADA
-    secret_access_key:
-      secure: QUAghDXmpd9SIlTudNhT5aQMe80h4cpp+Povu6TvewA8V0LHczdWsbTJaZj2bMZj
-    bucket: level12-wheels
-    set_public: true
-    folder: sqlalchemy
-    artifact: project\dist\SQLAlchemy-1.0.8-cp27-none-win32.whl
-    on:
-      branch: sqlalchemy
-
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
   - path: project\dist\*
