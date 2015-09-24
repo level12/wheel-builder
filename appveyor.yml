@@ -4,10 +4,6 @@ environment:
     # /E:ON and /V:ON options are not enabled in the batch script intepreter
     # See: http://stackoverflow.com/a/13751649/163740
     CMD_IN_ENV: "cmd /E:ON /V:ON /C %APPVEYOR_BUILD_FOLDER%\\appveyor\\run_with_env.cmd"
-
-  GIT_URL:
-  GIT_REF:
-
   matrix:
     # Pre-installed Python versions, which Appveyor may upgrade to
     # a later point release.
@@ -32,12 +28,23 @@ install:
   - "%CMD_IN_ENV% pip install wheel"
 
 build_script:
-    #- git clone --depth=1 --branch %GIT_REF% %GIT_URL% project
-    #- cd project
-    #- git checkout %GIT_REF%
-    #- "%CMD_IN_ENV% python setup.py bdist_wheel"
-    - echo "see other branches for builds"
+    - hg clone -u https://bitbucket.org/cffi/cffi
+    - cd cffi
+    - hg checkout -C release-1.2
+    - "%cmd_in_env% python setup.py bdist_wheel"
+    - cd ..
+    - move cffi\dist\* .
+
+deploy:
+  provider: S3
+  access_key_id: AKIAITHBLDMKF6TGCADA
+  secret_access_key:
+    secure: K1i5s/MHOoTBS2tzpwigQHg5wSRAmmeJIWmL+bxgrTfr9hIdZRt//lJkkT5FN9dz
+  bucket: level12-wheels
+  set_public: true
+  folder: cffi
+  artifact: cffi-1.2.0-cp34-none-win32.whl, cffi-1.2.0-cp27-none-win32.whl
 
 artifacts:
-  # Archive the generated wheel package in the ci.appveyor.com build report.
-  - path: project\dist\*
+  - path: cffi-1.2.0-cp34-none-win32.whl
+  - paht: cffi-1.2.0-cp27-none-win32.whl
