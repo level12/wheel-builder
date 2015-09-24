@@ -42,9 +42,6 @@ build_script:
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
     - cd ..
     - move project\dist\* .
-    - dir
-    - dir project
-    - dir project\dist
 
 deploy:
   provider: S3
@@ -55,3 +52,7 @@ deploy:
   set_public: true
   folder: sqlalchemy
   artifact: SQLAlchemy-1.0.8-cp34-none-win32.whl, SQLAlchemy-1.0.8-cp27-none-win32.whl
+
+artifacts:
+  - path: SQLAlchemy-1.0.8-cp34-none-win32.whl
+  - path: SQLAlchemy-1.0.8-cp27-none-win32.whl
