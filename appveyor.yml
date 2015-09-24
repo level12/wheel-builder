@@ -36,8 +36,19 @@ build_script:
     - cd project
     - git checkout %GIT_REF%
     - "%CMD_IN_ENV% python setup.py bdist_wheel"
-    - echo "see other branches for builds"
+    - cd ..
+    - move project\dist\* .
+
+deploy:
+  provider: S3
+  access_key_id: AKIAITHBLDMKF6TGCADA
+  secret_access_key:
+    secure: K1i5s/MHOoTBS2tzpwigQHg5wSRAmmeJIWmL+bxgrTfr9hIdZRt//lJkkT5FN9dz
+  bucket: level12-wheels
+  set_public: true
+  folder: simplejson
+  artifact: simplejson-3.8.0-cp27-none-win32.whl, simplejson-3.8.0-cp34-none-win32.whl
 
 artifacts:
-  # Archive the generated wheel package in the ci.appveyor.com build report.
-  - path: project\dist\*
+  - path: simplejson-3.8.0-cp27-none-win32.whl
+  - path: simplejson-3.8.0-cp34-none-win32.whl
