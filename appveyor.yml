@@ -49,9 +49,7 @@ deploy:
   bucket: level12-wheels
   set_public: true
   folder: sqlalchemy
-  artifact:
-    - project\dist\SQLAlchemy-1.0.8-cp34-none-win32.whl
-    - project\dist\SQLAlchemy-1.0.8-cp27-none-win32.whl
+  artifact: project\dist\SQLAlchemy-1.0.8-cp34-none-win32.whl, project\dist\SQLAlchemy-1.0.8-cp27-none-win32.whl
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
