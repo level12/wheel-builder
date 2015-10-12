@@ -1,0 +1,28 @@
+env:
+  - PROJECT_URL=https://github.com/python-pillow/Pillow.git PROJECT_REF=3.0.0
+os:
+  - linux
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+before_script:
+  - pip install -U pip
+  - pip install wheel
+  - chmod 0777 ./travis/get_project.sh
+  - ./travis/get_project.sh
+script: return 0
+deploy:
+  skip_cleanup: true
+  provider: s3
+  access_key_id: AKIAITHBLDMKF6TGCADA
+  secret_access_key:
+    secure: EeSCvJQZ0GtdvPiltIjBY6V9Zg0onZMB8U4s4n/vbYiHrWNGBheQlFWt+0vp9vvB4ngU2QTic2a6vPX7fAjHHmhl3M8nFYLemTW+jrstQOEShIxYqQlnbC4e88VguDkkmsp9Ica6h684iahUFF5R1gw8104naYzY/vxatwXjVeYoZ+2S0qakw1krgW2ReLwpTcQC22V15ZPwUVBEEAtGxk5FPFez75jSAWZv19MrchB5oCPi7rpGscgaCdasgm3SJ85BHv8JTgsSm0/V2VhURYRCnP7El57lpo1yDbbzNqntVHCRadN60zGHMsCa9jvFZIgFdj9vTlzF1G+lmgjBaQm2jPX3MbYDBmsLIoIYzCUv9TlPH8nZm91xQRmDqARNDOlD5utygZ02C4przfZHA0qJPEsPrrr5p5OhH5/O/y8jcsQiRw9ToYdZ3PVEyy81WKyCvfBygnpy8JyxBqL5HMQHP9/DRlbYFTExrcZF4BE67a6aVWJyZWd4EdaNtt1gUZ6pT0P9sgtrxsSbn7BXWmpb5wyTs2JjR5WDPBNVmzgxc9oR8q8HnFPjxl+2+w7q8ZrB0gLOuwbo8296AZJ6nO82oF+RbGLZN60pouspojgxK+oVVr/2/TREmYDEJRRxqWF0SRci+C4ulR1fbBesmAFTjxCc0H96Q/DjaUwrkbA=
+  bucket: level12-wheels
+  local-dir: project/dist
+  upload-dir: pillow
+  acl: public_read
+  on:
+    repo: level12/wheel-builder
+    branch: pillow
