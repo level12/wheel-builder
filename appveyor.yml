@@ -36,7 +36,8 @@ build_script:
     - git clone --depth=1 --branch %GIT_REF% %GIT_URL% project
     - cd project
     - git checkout %GIT_REF%
-    - "%CMD_IN_ENV% python setup.py bdist_wheel"
+    - mkdir dist
+    - "%CMD_IN_ENV% pip wheel --wheel-dir=./dist psycopg2"
     - cd ..
     - move project\dist\* .
 
