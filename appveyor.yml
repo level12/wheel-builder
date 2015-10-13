@@ -7,6 +7,8 @@ environment:
 
   GIT_URL: https://github.com/psycopg/psycopg2.git
   GIT_REF: 2_6_1
+  PATH: C:\Program Files\PostgreSQL\9.3\bin\;%PATH%
+
 
 
   matrix:
@@ -19,6 +21,9 @@ environment:
     - PYTHON: "C:\\Python34"
       PYTHON_VERSION: "3.4.3"
       PYTHON_ARCH: "32"
+
+services:
+  - postgresql
 
 install:
   # Prepend newly installed Python to the PATH of this build (this cannot be
