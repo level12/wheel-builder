@@ -24,6 +24,12 @@ install:
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%APPVEYOR_BUILD_FOLDER%;%PATH%"
+  - git clone https://github.com/wiredfool/pillow-depends.git c:\pillow-depends
+  - xcopy c:\pillow-depends\*.zip c:\pillow\winbuild\
+  - xcopy c:\pillow-depends\*.tar.gz c:\pillow\winbuild\
+  - cd c:\pillow\winbuild\
+  - c:\python34\python.exe c:\pillow\winbuild\build_dep.py
+  - c:\pillow\winbuild\build_deps.cmd
 
   # Check that we have the expected version and architecture for Python
   - "python --version"
