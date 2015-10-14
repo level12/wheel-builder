@@ -9,7 +9,7 @@ before_script:
   - pip install -U pip
   - pip install wheel
 script:
-  - cat ../packages.txt | xargs -IPACKAGE pip wheel --no-cache-dir --wheel-dir=packages/PACKAGE PACKAGE
+  - cat packages.txt | xargs -IPACKAGE pip wheel --no-cache-dir --wheel-dir=packages/PACKAGE PACKAGE
 deploy:
   skip_cleanup: true
   provider: s3
