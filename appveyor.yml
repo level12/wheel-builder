@@ -12,7 +12,7 @@ install:
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - "pip install wheel"
   - "mkdir packages"
-  - "foreach ($PACKAGE in get-content packages.txt) { pip wheel --no-cache-dir --wheel-dir=.\\packages\$PACKAGE $PACKAGE }"
+  - "foreach ($PACKAGE in get-content packages.txt) { pip wheel --no-cache-dir --wheel-dir=.\\packages\\$PACKAGE $PACKAGE }"
 
 artifacts:
   - path: packages\*
