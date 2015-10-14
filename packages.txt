@@ -1,2 +1,7 @@
 wrapt
 lxml
+bcrypt
+cffi
+coverage
+cryptography
+libsass
