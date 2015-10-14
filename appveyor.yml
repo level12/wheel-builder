@@ -9,6 +9,7 @@ environment:
       PYTHON_ARCH: "32"
 
 install:
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - "pip install wheel"
   - "mkdir packages"
 

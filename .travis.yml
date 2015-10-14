@@ -21,3 +21,4 @@ deploy:
   acl: public_read
   on:
     repo: level12/wheel-builder
+    branch: refactor
