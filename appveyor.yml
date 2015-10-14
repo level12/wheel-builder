@@ -12,9 +12,10 @@ install:
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - "pip install wheel"
   - "mkdir packages"
+  - "foreach ($PACKAGE in get-content packages.txt) { pip wheel --no-cache-dir --wheel-dir=.\packages\\$PACKAGE $PACKAGE }"
 
 build_script:
-  - ".\\appveyor\\createwheels.ps1"
+  - ps: ".\\appveyor\\createwheels.ps1"
 
 artifacts:
   - path: packages\*
