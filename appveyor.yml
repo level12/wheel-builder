@@ -15,5 +15,8 @@ install:
   - "mkdir packages"
   - ps: "foreach ($PACKAGE in get-content packages.txt) { pip wheel --no-cache-dir --wheel-dir=.\\packages\\$PACKAGE $PACKAGE }"
 
+build:
+  - "echo 'complete'"
+
 artifacts:
   - path: packages\*
